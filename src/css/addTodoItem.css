@@ -1,0 +1,195 @@
+#label {
+    font-size: 1rem;
+}
+
+.item-togler {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    opacity: 0.3;
+    z-index: -1;
+    background: rgba(36, 35, 35, 0.284);
+    transition: all 0.3s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    z-index: 300;
+    pointer-events: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.invisible {
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+:root {
+    --border-angle: 0turn;
+    /* For animation */
+}
+
+.inner-item-togler {
+    width: 50%;
+    height: 60%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 5px transparent;
+
+    --main-bg: conic-gradient(from var(--border-angle),
+            #ffffff,
+            #f8f8f8 5%,
+            #f0f0f0 65%,
+            #e8e8e8 95%);
+
+    --gradient-border: conic-gradient(from var(--border-angle),
+            transparent 25%,
+            #f9d423,
+            #ff6a6a,
+            #a1c4fd,
+            #fbc2eb,
+            #f03 99%,
+            transparent);
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+    animation: bg-spin 5s linear infinite;
+    border-radius: 1em;
+
+}
+
+/* Keyframes must be top-level in plain CSS */
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+/* Flatten the nested &:hover into a separate rule */
+.inner-item-togler:hover {
+    animation-play-state: paused;
+}
+
+
+
+.input-feald {
+    outline: none;
+    border: 1px solid transparent;
+    background: white;
+    transition: all 0.3s ease-in-out;
+    padding: 4px;
+}
+
+.input-feald:hover,
+.input-feald:active {
+    border: 1px solid #4CAF50;
+    /* box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); */
+
+}
+
+.input-feald:focus {
+    background: hsl(0, 0%, 81%);
+}
+
+.tit,
+.dis,
+.timer-contaner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 15px;
+}
+
+.tit>label,
+.dis>label,
+.timer-contaner>label {
+    padding: 5px 0;
+}
+
+.btn-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.creatBtn {
+    width: 50%;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #dccccc;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in;
+}
+
+.deleteBtn {
+    width: 50%;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: #a85555;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in;
+}
+
+.creatBtn:hover,
+.creatBtn:active {
+    background-color: #bbacac;
+    letter-spacing: 5px;
+}
+
+.deleteBtn:hover,
+.deleteBtn:active {
+    background-color: #d13d3d;
+    letter-spacing: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+
+@media (max-width: 1199px) {
+    .inner-item-togler {
+        width: 60%;
+        height: 70%;
+    }
+
+    .creatBtn:hover,
+    .creatBtn:active {
+        background-color: #bbacac;
+        letter-spacing: 2px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .inner-item-togler {
+        width: 80%;
+        height: 80%;
+    }
+
+}

@@ -1,0 +1,254 @@
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}  
+
+
+
+.links .list .link {
+    position: relative;
+    text-align: center;
+    width: 60px;
+    padding-bottom: 4px;
+    /* reserve space for underline */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebars {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 1px;
+}
+
+.deletedSide {
+    position: absolute;
+    top: 0; 
+    left: -30%;
+    height: 100vh;
+    transition: all 0.5s ease-in;    
+}
+
+.completedSide {
+    position: absolute;
+    top: 0; 
+    right: -30%;
+    height: 100vh;
+    transition: all 0.5s ease-in;
+}
+
+.showBarLeft {
+    left: 0;
+}
+
+.showBarRight {
+    right: 0;
+}
+
+
+
+.deletedSide,
+.completedSide {
+    width: 30%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4); /* A semi-transparent background is essential */
+    backdrop-filter: blur(2rem); /* Adjust the pixel value for desired blur intensity */
+}
+
+.list-tasks-deleted,
+.list-tasks-completed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.card-items { 
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 5px 15px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 1px solid black;
+}
+
+.card-items:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    
+}
+.card-items div {
+    padding: 4px 0;
+}
+
+.closeXLeft,
+.closeXRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+}
+
+.closeXLeft {
+
+    justify-content: left;
+    align-items: end !important;
+}
+
+.closeXRight {
+
+    justify-content: left;
+    align-items: start !important;
+
+}
+
+.closeXLeft > button,
+.closeXRight > button {
+    background-color: #a83333;
+    border: 1px solid transparent;
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.deleteTab,
+.completeTab {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+.deleteTab {
+    align-items: start !important;
+    justify-content: left !important;
+}
+
+.completeTab {
+    align-items: end !important;
+    justify-content: right !important;
+}
+
+.deleteTab > button,
+.completeTab > button {
+    border: 1px solid transparent;
+    width: 200px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.deleteTab > button {
+    background-color: #a83333;
+    color: white;
+}
+
+.deleteTab > button:hover,
+.deleteTab > button:active {
+    background-color: #7d2727;
+}
+
+.closeXLeft > button:hover,
+.closeXRight > button:hover,
+.closeXLeft > button:active,
+.closeXRight > button:active {
+    background-color: #0e0404;
+}
+
+.completeTab > button:hover,
+.completeTab > button:active {
+    background-color: #cecccc;
+}
+
+.discription-del > h3,
+.discription-com > h3 {
+    padding-left: 1rem;
+    color: brown;
+}
+
+.timer-com > h3,
+.timer-del > h3 {
+    padding-left: 2rem;
+    color: rgb(25, 63, 27);
+}
+
+
+@media (max-width: 999px) {
+    .deletedSide {
+        left: -50%;
+    }
+    .completedSide {
+        right: -50%;
+    }
+
+    .deletedSide,
+    .completedSide {
+        width: 50%;
+    }
+
+    .showBarLeft {
+    left: 0;
+    }
+
+    .showBarRight {
+        right: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    .deletedSide {
+        left: -70%;
+    }
+    .completedSide {
+        right: -70%;
+    }
+
+    .deletedSide,
+    .completedSide {
+        width: 70%;
+    }
+
+    .showBarLeft {
+        left: 0;
+    }
+
+    .showBarRight {
+        right: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .deletedSide {
+        left: -100%;
+    }
+    .completedSide {
+        right: -100%;
+    }
+
+    .deletedSide,
+    .completedSide {
+        width: 100%;
+    }
+
+    .showBarLeft {
+        left: 0;
+    }
+
+    .showBarRight {
+        right: 0;
+    }
+}

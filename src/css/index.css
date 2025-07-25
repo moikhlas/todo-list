@@ -1,0 +1,23 @@
+/*
+font-family: "Funnel Display", sans-serif; 
+font-family: "League Spartan", sans-serif;
+*/
+
+/*
+    #222831
+    #393E46
+    #948979
+    #DFD0B8
+*/
+
+* {
+    font-family: "Funnel Display", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
