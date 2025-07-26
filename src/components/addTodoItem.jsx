@@ -18,9 +18,9 @@ function AddTodoItem({ cards, stat, setState, creatCards }) {
     // These will be used to create or edit the timer for a todo item
     // They are not directly tied to the TimerContext, but can be used to update it
 
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
-    const [hours, setHours] = useState(0)
+    const [minutes, setMinutes] = useState("")
+    const [seconds, setSeconds] = useState("")
+    const [hours, setHours] = useState("")
 
     /*============================== ====================================*/
 
@@ -75,9 +75,9 @@ function AddTodoItem({ cards, stat, setState, creatCards }) {
             TimerCalc(totalTime, countCards.current);
             return updatedCards;
         });
-        setHours(0);
-        setMinutes(0);
-        setSeconds(0);
+        setHours("");
+        setMinutes("");
+        setSeconds("");
         setTitleVal("");
         SetDisVal("");
     }
@@ -98,9 +98,9 @@ useEffect(() => {
         // Reset fields if card is not found (e.g., after deletion)
         setTitleVal("");
         SetDisVal("");
-        setHours(0);
-        setMinutes(0);
-        setSeconds(0);
+        setHours("");
+        setMinutes("");
+        setSeconds("");
     }
 }, [isShowDetalis, showDetails, cards.length]);
 
@@ -143,9 +143,9 @@ useEffect(() => {
         // This will ensure that the timerCalculator.js keeps track of the latest time for each card
         // This will also clean up the input fields after editing
         creatCards(updatedCards);
-        setHours(0);
-        setMinutes(0);
-        setSeconds(0);
+        setHours("");
+        setMinutes("");
+        setSeconds("");
         setTitleVal("");
         SetDisVal("");
     };

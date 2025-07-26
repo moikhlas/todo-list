@@ -9,9 +9,9 @@ function SetTimer({stat}) {
     const { setMinutes, setSeconds, setHours } = useContext(TimerContext); 
 
     // Create local state for each input field
-    const [inputHours, setInputHours] = useState(0);
-    const [inputMinutes, setInputMinutes] = useState(0);
-    const [inputSeconds, setInputSeconds] = useState(0);
+    const [inputHours, setInputHours] = useState("");
+    const [inputMinutes, setInputMinutes] = useState("");
+    const [inputSeconds, setInputSeconds] = useState("");
 
     // useEffect to initialize local state when a card is selected
     useEffect(() => {
@@ -31,12 +31,12 @@ function SetTimer({stat}) {
             }
         } else if (stat && !isShowDetalis) {
             // If in add mode and not editing, reset to zero
-            setInputHours(0);
-            setInputMinutes(0);
-            setInputSeconds(0);
-            setHours(0);
-            setMinutes(0);
-            setSeconds(0);
+            setInputHours("");
+            setInputMinutes("");
+            setInputSeconds("");
+            setHours("");
+            setMinutes("");
+            setSeconds("");
         }
     }, [showDetails, isShowDetalis, stat, setHours, setMinutes, setSeconds]);
 

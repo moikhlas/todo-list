@@ -13,9 +13,10 @@ A simple, responsive Todo List web app built using **React**. It helps you manag
 - **Responsive** design for desktop and mobile devices
 
 ## 📷 Demo
-
-*(Add a screenshot or live demo link here if available)*
-
+![WebPage Demo](https://github.com/moikhlas/todo-list/blob/main/public/example-original-webpage.png?raw=true)
+![Add and Remove Item Box Example](https://github.com/moikhlas/todo-list/blob/main/public/example-add-remove-item.png?raw=true) 
+![Example Remove and Add Colums](https://github.com/moikhlas/todo-list/blob/main/public/example-side-bars.png?raw=true)
+![Example of WebPage with Cards](https://github.com/moikhlas/todo-list/blob/main/public/example-with-cards.png?raw=true)
 ---
 
 ## 🚀 Getting Started
